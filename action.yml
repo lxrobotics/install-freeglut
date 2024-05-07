@@ -1,0 +1,15 @@
+name: 'Install Orocos KDL'
+description: 'Install Orocos KDL for CI'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install FreeGLUT
+      shell: bash
+      run: |
+        git clone https://github.com/freeglut/freeglut
+        cd freeglut
+        git checkout v3.4.0
+        mkdir build && cd build
+        cmake .. && make -j8
+        sudo make install
