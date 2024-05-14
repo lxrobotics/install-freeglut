@@ -7,6 +7,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: |
+        sudo apt-get update
         sudo apt-get install -y libgl1-mesa-dev libglu1-mesa-dev libx11-dev libxi-dev
 
     - name: Install FreeGLUT
@@ -22,4 +23,5 @@ runs:
     - name: Install gtkmm
       shell: bash
       run: |
+        sudo apt-get update
         sudo apt-get install -y libgtkmm-3.0-dev
