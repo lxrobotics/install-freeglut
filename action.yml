@@ -7,7 +7,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: |
-        sudo apt-get install -y libgl-dev libxi-dev libgtkmm-3.0-dev
+        sudo apt-get install -y libgl1-mesa-dev libglu1-mesa-dev libx11-dev libxi-dev
 
     - name: Install FreeGLUT
       shell: bash
@@ -18,3 +18,8 @@ runs:
         mkdir build && cd build
         cmake .. && make -j8
         sudo make install
+
+    - name: Install gtkmm
+      shell: bash
+      run: |
+        sudo apt-get install -y libgtkmm-3.0-dev
